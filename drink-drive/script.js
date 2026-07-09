@@ -49,12 +49,10 @@ function showQuestion() {
     button.textContent = option;
     button.onclick = () => {
       selectedAnswer = index;
-      document.querySelectorAll(".options button").forEach(btn => {
-        btn.style.borderColor = "#ddd";
-        btn.style.background = "#fff";
-      });
-      button.style.borderColor = "#0b7cc1";
-      button.style.background = "#e8f5fb";
+document.querySelectorAll(".options button").forEach(btn => {
+  btn.classList.remove("selected");
+});
+button.classList.add("selected");
     };
     optionsBox.appendChild(button);
   });
