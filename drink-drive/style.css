@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 body {
@@ -12,7 +14,7 @@ body {
 .app {
   width: 100%;
   min-height: 100vh;
-  padding: 22px 18px;
+  padding: 18px 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,15 +31,26 @@ body {
   box-shadow: 0 18px 45px rgba(26, 74, 128, 0.14);
 }
 
-.hidden {
-  display: none;
+/* 공통 가운데 정렬 */
+.quiz-screen,
+.result-screen,
+.pledge-screen,
+.complete-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.hidden {
+  display: none !important;
+}
+
+/* 시작 화면 */
 .logo-img {
-  width: 190px;
-  max-width: 82%;
+  width: 210px;
+  max-width: 86%;
   display: block;
-  margin: 0 auto 20px;
+  margin: 0 auto 22px;
 }
 
 .start-sub {
@@ -49,7 +62,7 @@ body {
 
 .start-title {
   margin: 0 0 14px;
-  font-size: 42px;
+  font-size: 40px;
   line-height: 1.12;
   font-weight: 900;
   color: #0b2f73;
@@ -57,17 +70,17 @@ body {
 }
 
 .start-desc {
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   color: #526070;
   font-size: 17px;
-  line-height: 1.55;
-  font-weight: 500;
+  line-height: 1.6;
+  font-weight: 600;
 }
 
 .hero-img {
   width: 100%;
   display: block;
-  margin: 0 auto 22px;
+  margin: 0 auto 24px;
   border-radius: 24px;
 }
 
@@ -84,15 +97,16 @@ body {
   box-shadow: 0 10px 24px rgba(17, 103, 232, 0.28);
 }
 
+/* 퀴즈 */
 .quiz-top {
-  text-align: left;
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 42px;
 }
 
 .quiz-top p {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   color: #1663d9;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 900;
 }
 
@@ -113,46 +127,48 @@ body {
 }
 
 .q-mark {
-  margin: 0 0 10px;
+  margin: 0 0 16px;
   color: #1663d9;
-  font-size: 34px;
+  font-size: 42px;
   font-weight: 900;
-  text-align: left;
+  text-align: center;
 }
 
 .quiz-screen h2 {
-  margin: 0;
-  text-align: left;
+  margin: 0 auto;
+  max-width: 360px;
+  text-align: center;
   color: #102033;
-  font-size: 27px;
-  line-height: 1.35;
-  letter-spacing: -1px;
+  font-size: 30px;
+  line-height: 1.45;
+  letter-spacing: -1.2px;
 }
 
 .guide {
-  margin: 18px 0 16px;
-  text-align: left;
+  margin: 22px 0 20px;
+  text-align: center;
   color: #7a8795;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .options {
   display: grid;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 28px;
 }
 
 .option-btn {
   width: 100%;
-  padding: 18px 18px;
-  border-radius: 18px;
+  min-height: 74px;
+  padding: 18px;
+  border-radius: 20px;
   border: 2px solid #dce8f7;
   background: #ffffff;
   color: #102033;
-  font-size: 17px;
-  font-weight: 800;
-  text-align: left;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
   cursor: pointer;
 }
 
@@ -162,11 +178,12 @@ body {
   color: #0b5ed7;
 }
 
+/* 결과 */
 .result-visual {
   position: relative;
   width: 210px;
   height: 165px;
-  margin: 0 auto 16px;
+  margin: 0 auto 28px;
 }
 
 .confetti-img {
@@ -189,85 +206,90 @@ body {
 .result-screen h2,
 .pledge-screen h2,
 .complete-screen h2 {
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   color: #0b2f73;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 900;
   letter-spacing: -1px;
+  text-align: center;
 }
 
 .score {
-  margin: 10px 0;
+  margin: 12px 0;
   color: #1167e8;
-  font-size: 48px;
+  font-size: 64px;
   font-weight: 900;
 }
 
 .result-msg,
 .complete-msg {
-  margin: 0 0 24px;
+  margin: 0 0 28px;
   color: #526070;
-  font-size: 17px;
-  line-height: 1.6;
-  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 700;
+  text-align: center;
 }
 
+/* 서약 */
 .pledge-box {
-  margin: 22px 0;
-  padding: 22px 18px;
-  border-radius: 22px;
+  margin: 26px 0;
+  padding: 24px 20px;
+  border-radius: 24px;
   background: #f4f8ff;
   color: #27384a;
-  font-size: 16px;
-  line-height: 1.7;
-  font-weight: 600;
-  text-align: left;
+  font-size: 18px;
+  line-height: 1.75;
+  font-weight: 700;
+  text-align: center;
 }
 
 .check-row {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin: 0 0 24px;
+  gap: 12px;
+  margin: 0 0 28px;
   color: #102033;
-  font-size: 16px;
-  font-weight: 800;
-  text-align: left;
+  font-size: 17px;
+  font-weight: 900;
+  text-align: center;
 }
 
 .check-row input {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   accent-color: #1167e8;
   flex-shrink: 0;
 }
 
+/* 완료 */
 .complete-icon {
-  width: 170px;
+  width: 165px;
   display: block;
-  margin: 20px auto 22px;
+  margin: 0 auto 28px;
 }
 
 .org-badge {
   display: inline-block;
-  margin: 8px 0 0;
-  padding: 10px 14px;
+  margin: 10px auto 0;
+  padding: 11px 16px;
   border-radius: 999px;
   background: #edf6ff;
   color: #1663d9;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 900;
 }
 
 @media (max-width: 420px) {
-  .app {
-    padding: 14px;
-  }
-
   .screen {
     min-height: calc(100vh - 28px);
     padding: 26px 20px;
-    border-radius: 26px;
+    border-radius: 28px;
+  }
+
+  .logo-img {
+    width: 200px;
   }
 
   .start-title {
@@ -275,6 +297,14 @@ body {
   }
 
   .quiz-screen h2 {
-    font-size: 24px;
+    font-size: 28px;
+  }
+
+  .score {
+    font-size: 58px;
+  }
+
+  .pledge-box {
+    font-size: 17px;
   }
 }
