@@ -423,3 +423,23 @@ body {
 .start-title .black{
     color:#111827;
 }
+.start-screen {
+  padding: 0 0 28px;
+  background: #eaf6ff;
+}
+
+.hero-full-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.start-real-btn {
+  width: calc(100% - 40px);
+  margin: 20px auto 0;
+  display: block;
+  height: 64px;
+  border-radius: 22px;
+  font-size: 22px;
+  font-weight: 800;
+}
