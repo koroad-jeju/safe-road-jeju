@@ -323,3 +323,55 @@ h2{
   #questionText{font-size:23px;}
   .options button{min-height:70px;}
 }
+.logo-img {
+  width: 190px;
+  max-width: 85%;
+  margin: 0 auto 18px;
+  display: block;
+}
+
+.hero-img-wrap {
+  width: 100%;
+  margin: 24px 0 18px;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  display: block;
+}
+
+.result-visual {
+  position: relative;
+  width: 180px;
+  height: 150px;
+  margin: 0 auto 20px;
+}
+
+.confetti-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.result-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 95px;
+  transform: translate(-50%, -45%);
+  z-index: 2;
+}
+
+.complete-icon {
+  width: 150px;
+  display: block;
+  margin: 0 auto 22px;
+}
+
+.emoji {
+  display: none;
+}
