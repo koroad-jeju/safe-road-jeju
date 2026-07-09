@@ -11,15 +11,13 @@
   <main class="app">
 
     <!-- 시작 화면 -->
-<section class="screen start-screen" id="startScreen">
+    <section class="screen start-screen" id="startScreen">
+      <img src="hero.png" alt="음주운전 근절 캠페인" class="hero-full-img">
 
-  <img src="hero.png" alt="음주운전 근절 캠페인" class="hero-full-img">
-
-  <button class="primary-btn start-real-btn" onclick="startQuiz()">
-    시작하기 →
-  </button>
-
-</section>
+      <button class="primary-btn start-real-btn" onclick="startQuiz()">
+        시작하기 →
+      </button>
+    </section>
 
     <!-- 퀴즈 화면 -->
     <section class="screen quiz-screen hidden" id="quizScreen">
@@ -37,7 +35,12 @@
 
       <div class="options" id="options"></div>
 
-      <button class="primary-btn" onclick="nextQuestion()" id="nextBtn">
+      <div class="explain-box hidden" id="explainBox">
+        <p class="explain-result" id="explainResult"></p>
+        <p class="explain-text" id="explainText"></p>
+      </div>
+
+      <button class="primary-btn" onclick="nextQuestion()" id="nextBtn" disabled>
         다음
       </button>
     </section>
@@ -61,29 +64,24 @@
     </section>
 
     <!-- 서약 화면 -->
-<section class="screen pledge-screen hidden" id="pledgeScreen">
+    <section class="screen pledge-screen hidden" id="pledgeScreen">
+      <img src="pledge-hero.png" alt="음주운전 근절 서약" class="pledge-hero-img">
 
-  <img src="pledge-hero.png" alt="음주운전 근절 서약" class="pledge-hero-img">
+      <label class="check-row pledge-check-row">
+        <input type="checkbox" id="pledgeCheck">
+        <span>위 내용에 동의합니다.</span>
+      </label>
 
-  <label class="check-row pledge-check-row">
-    <input type="checkbox" id="pledgeCheck">
-    <span>위 내용에 동의합니다.</span>
-  </label>
-
-  <button class="primary-btn pledge-btn" onclick="submitPledge()">
-    서약 완료 →
-  </button>
-
-</section>
+      <button class="primary-btn pledge-btn" onclick="submitPledge()">
+        서약 완료 →
+      </button>
+    </section>
 
     <!-- 완료 화면 -->
-<section class="screen complete-screen hidden" id="completeScreen">
+    <section class="screen complete-screen hidden" id="completeScreen">
+      <img src="complete-hero.png" alt="서약 완료" class="complete-hero-img">
+    </section>
 
-    <img src="complete-hero.png"
-         alt="서약 완료"
-         class="complete-hero-img">
-
-</section>
   </main>
 
   <script src="script.js"></script>
