@@ -1,19 +1,19 @@
 const quizData = [
   {
-    question: "음주운전은 자전거와 전동킥보드도 해당될 수 있다.",
+    question: "음주운전은 자동차뿐만 아니라 자전거와 전동킥보드도 해당될 수 있다.",
     options: ["맞다", "아니다"],
-    answer: 0,
+    answer: 0
   },
   {
-    question: "음주운전은 보험료 할증에도 영향을 줄 수 있다.",
+    question: "음주운전 사고를 냈더라도 보험처리를 하지 않으면 보험료는 할증되지 않는다.",
     options: ["맞다", "아니다"],
-    answer: 0,
+    answer: 1
   },
   {
-    question: "숙취가 남아 있다면 다음 날에도 운전에 영향을 줄 수 있다.",
+    question: "아파트 주차장에서 차량을 운전하는 것도 음주운전에 해당될 수 있다.",
     options: ["맞다", "아니다"],
-    answer: 0,
-  },
+    answer: 0
+  }
 ];
 
 let currentQuestion = 0;
