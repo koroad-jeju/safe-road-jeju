@@ -443,3 +443,37 @@ body {
   font-size: 22px;
   font-weight: 800;
 }
+.pledge-screen {
+  padding: 0 0 28px;
+  background: #eaf6ff;
+}
+
+.pledge-hero-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.pledge-check-row {
+  width: calc(100% - 40px);
+  margin: 18px auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #17233b;
+}
+
+.pledge-check-row input {
+  width: 28px;
+  height: 28px;
+  accent-color: #1464e9;
+}
+
+.pledge-btn {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  display: block;
+}
