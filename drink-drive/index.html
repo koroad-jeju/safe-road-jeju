@@ -61,26 +61,20 @@
     </section>
 
     <!-- 서약 화면 -->
-    <section class="screen pledge-screen hidden" id="pledgeScreen">
-      <h2>음주운전 근절 서약</h2>
+<section class="screen pledge-screen hidden" id="pledgeScreen">
 
-      <div class="pledge-box">
-        나는 음주 후 절대 운전하지 않으며,<br>
-        술자리가 있는 날에는 대중교통 또는<br>
-        대리운전을 이용하고,<br>
-        주변 사람의 음주운전도 적극적으로<br>
-        만류할 것을 약속합니다.
-      </div>
+  <img src="pledge-hero.png" alt="음주운전 근절 서약" class="pledge-hero-img">
 
-      <label class="check-row">
-        <input type="checkbox" id="pledgeCheck">
-        <span>위 내용에 동의합니다.</span>
-      </label>
+  <label class="check-row pledge-check-row">
+    <input type="checkbox" id="pledgeCheck">
+    <span>위 내용에 동의합니다.</span>
+  </label>
 
-      <button class="primary-btn" onclick="submitPledge()">
-        서약 완료
-      </button>
-    </section>
+  <button class="primary-btn pledge-btn" onclick="submitPledge()">
+    서약 완료 →
+  </button>
+
+</section>
 
     <!-- 완료 화면 -->
 <section class="screen complete-screen hidden" id="completeScreen">
