@@ -2,17 +2,20 @@ const quizData = [
   {
     question: "음주운전은 자동차뿐만 아니라 자전거와 전동킥보드도 해당될 수 있다.",
     options: ["맞다", "아니다"],
-    answer: 0
+    answer: 0,
+    explanation: "맞습니다. 자전거와 전동킥보드 같은 개인형 이동장치도 음주 상태로 운전하면 단속 또는 처벌 대상이 될 수 있습니다."
   },
   {
     question: "음주운전 사고를 냈더라도 보험처리를 하지 않으면 보험료는 할증되지 않는다.",
     options: ["맞다", "아니다"],
-    answer: 1
+    answer: 1,
+    explanation: "아닙니다. 음주운전 사고는 보험처리 여부와 관계없이 법적 책임과 행정처분이 따를 수 있으며, 보험료 할증이 이뤄집니다."
   },
   {
     question: "아파트 주차장에서 차량을 운전하는 것도 음주운전에 해당될 수 있다.",
     options: ["맞다", "아니다"],
-    answer: 0
+    answer: 0,
+    explanation: "맞습니다. 아파트 주차장처럼 도로 외 장소라도 실제로 차량을 운전했다면 음주운전 형사처벌 대상이 됩니다."
   }
 ];
 
@@ -20,6 +23,7 @@ let currentQuestion = 0;
 let selectedAnswer = null;
 let userAnswers = [];
 let score = 0;
+let answered = false;
 
 const startScreen = document.getElementById("startScreen");
 const quizScreen = document.getElementById("quizScreen");
@@ -33,6 +37,11 @@ const questionText = document.getElementById("questionText");
 const optionsBox = document.getElementById("options");
 const scoreText = document.getElementById("scoreText");
 const resultMessage = document.getElementById("resultMessage");
+const nextBtn = document.getElementById("nextBtn");
+
+const explainBox = document.getElementById("explainBox");
+const explainResult = document.getElementById("explainResult");
+const explainText = document.getElementById("explainText");
 
 function showScreen(screen) {
   [startScreen, quizScreen, resultScreen, pledgeScreen, completeScreen].forEach((item) => {
@@ -47,6 +56,7 @@ function startQuiz() {
   selectedAnswer = null;
   userAnswers = [];
   score = 0;
+  answered = false;
 
   showScreen(quizScreen);
   renderQuestion();
@@ -63,6 +73,13 @@ function renderQuestion() {
 
   optionsBox.innerHTML = "";
   selectedAnswer = null;
+  answered = false;
+
+  explainBox.classList.add("hidden");
+  explainResult.textContent = "";
+  explainText.textContent = "";
+
+  nextBtn.disabled = true;
 
   item.options.forEach((option, index) => {
     const button = document.createElement("button");
@@ -71,17 +88,41 @@ function renderQuestion() {
     button.textContent = option;
 
     button.addEventListener("click", () => {
-      selectedAnswer = index;
-
-      document.querySelectorAll(".option-btn").forEach((btn) => {
-        btn.classList.remove("selected");
-      });
-
-      button.classList.add("selected");
+      selectAnswer(index);
     });
 
     optionsBox.appendChild(button);
   });
+}
+
+function selectAnswer(index) {
+  if (answered) return;
+
+  const item = quizData[currentQuestion];
+  const buttons = document.querySelectorAll(".option-btn");
+  const isCorrect = index === item.answer;
+
+  selectedAnswer = index;
+  answered = true;
+
+  buttons.forEach((btn, btnIndex) => {
+    btn.disabled = true;
+
+    if (btnIndex === item.answer) {
+      btn.classList.add("correct");
+    }
+
+    if (btnIndex === index && !isCorrect) {
+      btn.classList.add("wrong");
+    }
+  });
+
+  explainBox.classList.remove("hidden");
+  explainResult.textContent = isCorrect ? "정답입니다!" : "아쉽지만 오답입니다.";
+  explainResult.className = "explain-result " + (isCorrect ? "correct-text" : "wrong-text");
+  explainText.textContent = item.explanation;
+
+  nextBtn.disabled = false;
 }
 
 function nextQuestion() {
