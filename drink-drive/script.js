@@ -185,9 +185,6 @@ function submitPledge() {
   const pledgeName = document.getElementById("pledgeName");
   const pledgeDate = document.getElementById("pledgeDate");
 
-  const completeName = document.getElementById("completeName");
-  const completeDate = document.getElementById("completeDate");
-
   const name = pledgeName.value.trim();
   const date = pledgeDate.value;
 
@@ -205,11 +202,20 @@ function submitPledge() {
 
   if (!pledgeCheck.checked) {
     alert("서약 내용에 동의해 주세요.");
+    pledgeCheck.focus();
     return;
   }
 
-  completeName.textContent = name;
-  completeDate.textContent = formatKoreanDate(date);
+  const completeName = document.getElementById("completeName");
+  const completeDate = document.getElementById("completeDate");
+
+  if (completeName) {
+    completeName.textContent = name;
+  }
+
+  if (completeDate) {
+    completeDate.textContent = formatKoreanDate(date);
+  }
 
   showScreen(completeScreen);
 
