@@ -225,8 +225,6 @@ function formatKoreanDate(dateValue) {
   return `${year}년 ${Number(month)}월 ${Number(day)}일`;
 }
 
-  showScreen(completeScreen);
-}
 document.getElementById("pledgeName").addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
