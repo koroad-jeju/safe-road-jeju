@@ -334,8 +334,8 @@ body {
 
 /* 날짜·이름 작성 영역 */
 .pledge-write-box {
-  margin: 0 18px;
-  padding: 22px 18px;
+  margin: 0 18px 22px;
+  padding: 22px 18px 20px;
   border-radius: 22px;
   background: #ffffff;
   border: 1px solid #dbe8f7;
@@ -418,18 +418,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin: 0;
 }
 
-/* 두 번째 로고 이미지 */
+/* 입력 카드 안 기관 로고 */
 .pledge-logo-area {
-  margin: 28px 22px 4px;
-  padding: 16px 10px;
-  border-radius: 16px;
-  background: #ffffff;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #dbe8f7;
 }
 
 .pledge-logo-img {
   display: block;
   width: 100%;
+  max-width: 320px;
   height: auto;
+  margin: 0 auto;
   object-fit: contain;
 }
 
