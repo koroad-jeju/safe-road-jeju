@@ -165,18 +165,79 @@ function showResult() {
 
 function showPledge() {
   const pledgeCheck = document.getElementById("pledgeCheck");
+  const pledgeName = document.getElementById("pledgeName");
+  const pledgeDate = document.getElementById("pledgeDate");
+
   pledgeCheck.checked = false;
+  pledgeName.value = "";
+  pledgeDate.value = "";
 
   showScreen(pledgeScreen);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 function submitPledge() {
   const pledgeCheck = document.getElementById("pledgeCheck");
+  const pledgeName = document.getElementById("pledgeName");
+  const pledgeDate = document.getElementById("pledgeDate");
 
-  if (!pledgeCheck.checked) {
-    alert("서약 동의에 체크해 주세요.");
+  const completeName = document.getElementById("completeName");
+  const completeDate = document.getElementById("completeDate");
+
+  const name = pledgeName.value.trim();
+  const date = pledgeDate.value;
+
+  if (!date) {
+    alert("작성일을 선택해 주세요.");
+    pledgeDate.focus();
     return;
   }
 
+  if (!name) {
+    alert("서약인 이름을 입력해 주세요.");
+    pledgeName.focus();
+    return;
+  }
+
+  if (!pledgeCheck.checked) {
+    alert("서약 내용에 동의해 주세요.");
+    return;
+  }
+
+  completeName.textContent = name;
+  completeDate.textContent = formatKoreanDate(date);
+
+  showScreen(completeScreen);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+function formatKoreanDate(dateValue) {
+  const [year, month, day] = dateValue.split("-");
+
+  return `${year}년 ${Number(month)}월 ${Number(day)}일`;
+}
+
   showScreen(completeScreen);
 }
+document.getElementById("pledgeName").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+
+    const pledgeCheck = document.getElementById("pledgeCheck");
+
+    if (!pledgeCheck.checked) {
+      pledgeCheck.focus();
+      return;
+    }
+
+    submitPledge();
+  }
+});
