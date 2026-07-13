@@ -63,17 +63,16 @@
       </button>
     </section>
 
-   <!-- 서약 화면 -->
+  <!-- 서약 화면 -->
 <section class="screen pledge-screen hidden" id="pledgeScreen">
 
-  <!-- 서약서 본문 이미지 -->
   <img
     src="pledge-content.png"
     alt="음주운전 근절 서약서"
     class="pledge-content-img"
   >
 
-  <!-- 날짜·이름 작성 영역 -->
+  <!-- 날짜, 이름, 버튼, 로고를 하나의 카드에 넣음 -->
   <div class="pledge-write-box">
 
     <div class="pledge-input-group">
@@ -111,23 +110,50 @@
     >
       서약 완료 →
     </button>
+
+    <!-- 기관 로고를 같은 카드 안에 배치 -->
+    <div class="pledge-logo-area">
+      <img
+        src="pledge-logo.png"
+        alt="한국도로교통공단 제주지부 및 제주특별자치도개발공사"
+        class="pledge-logo-img"
+      >
+    </div>
+
+  </div>
+</section>
+    
+    <!-- 완료 화면 -->
+<section class="screen complete-screen hidden" id="completeScreen">
+
+  <div class="complete-check-icon">✓</div>
+
+  <h2>서약 완료!</h2>
+
+  <p class="complete-message">
+    참여해 주셔서 감사합니다.<br>
+    오늘의 약속이 모두의 안전을 지킵니다.
+  </p>
+
+  <div class="complete-info">
+    <p>
+      <span>작성일</span>
+      <strong id="completeDate"></strong>
+    </p>
+
+    <p>
+      <span>서약인</span>
+      <strong id="completeName"></strong>
+    </p>
   </div>
 
-  <!-- 하단 기관 로고 -->
-  <div class="pledge-logo-area">
-    <img
-      src="pledge-logo.png"
-      alt="한국도로교통공단 제주지부 및 제주특별자치도개발공사"
-      class="pledge-logo-img"
-    >
-  </div>
+  <img
+    src="pledge-logo.png"
+    alt="한국도로교통공단 제주지부 및 제주특별자치도개발공사"
+    class="complete-logo-img"
+  >
 
 </section>
-
-    <!-- 완료 화면 -->
-    <section class="screen complete-screen hidden" id="completeScreen">
-      <img src="complete-hero.png" alt="서약 완료" class="complete-hero-img">
-    </section>
 
   </main>
 
