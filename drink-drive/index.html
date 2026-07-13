@@ -63,19 +63,66 @@
       </button>
     </section>
 
-    <!-- 서약 화면 -->
-    <section class="screen pledge-screen hidden" id="pledgeScreen">
-      <img src="pledge-hero.png" alt="음주운전 근절 서약" class="pledge-hero-img">
+   <!-- 서약 화면 -->
+<section class="screen pledge-screen hidden" id="pledgeScreen">
 
-      <label class="check-row pledge-check-row">
-        <input type="checkbox" id="pledgeCheck">
-        <span>위 내용에 동의합니다.</span>
-      </label>
+  <!-- 서약서 본문 이미지 -->
+  <img
+    src="pledge-content.png"
+    alt="음주운전 근절 서약서"
+    class="pledge-content-img"
+  >
 
-      <button class="primary-btn pledge-btn" onclick="submitPledge()">
-        서약 완료 →
-      </button>
-    </section>
+  <!-- 날짜·이름 작성 영역 -->
+  <div class="pledge-write-box">
+
+    <div class="pledge-input-group">
+      <label for="pledgeDate">작성일</label>
+
+      <input
+        type="date"
+        id="pledgeDate"
+        class="pledge-input"
+      >
+    </div>
+
+    <div class="pledge-input-group">
+      <label for="pledgeName">서약인</label>
+
+      <input
+        type="text"
+        id="pledgeName"
+        class="pledge-input"
+        placeholder="이름을 입력해 주세요"
+        maxlength="10"
+        autocomplete="name"
+      >
+    </div>
+
+    <label class="check-row pledge-check-row">
+      <input type="checkbox" id="pledgeCheck">
+      <span>위 서약 내용에 동의합니다.</span>
+    </label>
+
+    <button
+      type="button"
+      class="primary-btn pledge-btn"
+      onclick="submitPledge()"
+    >
+      서약 완료 →
+    </button>
+  </div>
+
+  <!-- 하단 기관 로고 -->
+  <div class="pledge-logo-area">
+    <img
+      src="pledge-logo.png"
+      alt="한국도로교통공단 제주지부 및 제주특별자치도개발공사"
+      class="pledge-logo-img"
+    >
+  </div>
+
+</section>
 
     <!-- 완료 화면 -->
     <section class="screen complete-screen hidden" id="completeScreen">
