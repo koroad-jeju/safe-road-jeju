@@ -295,20 +295,7 @@ body {
   display: block;
 }
 
-/* 완료 화면 */
-.complete-screen {
-  padding: 0;
-  background: #eaf6ff;
-  overflow: hidden;
-}
 
-.complete-hero-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* 모바일 */
 @media (max-width: 420px) {
   .screen {
     min-height: calc(100vh - 28px);
@@ -330,4 +317,204 @@ body {
   .explain-text {
     font-size: 15px;
   }
+}
+/* 서약 화면 */
+.pledge-screen {
+  padding: 0 0 28px;
+  background: #f5faff;
+  overflow: hidden;
+}
+
+/* 첫 번째 서약서 이미지 */
+.pledge-content-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 날짜·이름 작성 영역 */
+.pledge-write-box {
+  margin: 0 18px;
+  padding: 22px 18px;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid #dbe8f7;
+  box-shadow: 0 12px 28px rgba(34, 91, 160, 0.12);
+}
+
+.pledge-input-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.pledge-input-group label {
+  display: block;
+  margin: 0 0 8px;
+  color: #17233b;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.pledge-input {
+  width: 100%;
+  height: 58px;
+  padding: 0 16px;
+  border: 2px solid #d8e5f7;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #102033;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 800;
+  outline: none;
+}
+
+.pledge-input:focus {
+  border-color: #1464e9;
+  box-shadow: 0 0 0 4px rgba(20, 100, 233, 0.1);
+}
+
+.pledge-input::placeholder {
+  color: #9aa7b8;
+  font-weight: 600;
+}
+
+/* 모바일 날짜 선택창이 잘 보이게 */
+input[type="date"] {
+  appearance: none;
+  -webkit-appearance: none;
+  min-height: 58px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* 동의 체크 */
+.pledge-check-row {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  color: #17233b;
+  font-size: 17px;
+  font-weight: 800;
+  text-align: left;
+}
+
+.pledge-check-row input {
+  width: 25px;
+  height: 25px;
+  accent-color: #1464e9;
+  flex-shrink: 0;
+}
+
+.pledge-btn {
+  width: 100%;
+  margin: 0;
+}
+
+/* 두 번째 로고 이미지 */
+.pledge-logo-area {
+  margin: 28px 22px 4px;
+  padding: 16px 10px;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.pledge-logo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 완료 화면 */
+.complete-screen {
+  min-height: 720px;
+  padding: 54px 24px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 50% 15%, rgba(92, 166, 255, 0.2), transparent 30%),
+    #ffffff;
+}
+
+.complete-check-icon {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2b8cff, #0055d8);
+  color: #ffffff;
+  font-size: 55px;
+  font-weight: 900;
+  box-shadow: 0 18px 35px rgba(20, 100, 233, 0.28);
+}
+
+.complete-screen h2 {
+  margin: 0 0 16px;
+  color: #0b3478;
+  font-size: 36px;
+  font-weight: 950;
+}
+
+.complete-message {
+  margin: 0 0 30px;
+  color: #526070;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 700;
+}
+
+.complete-info {
+  width: 100%;
+  margin-bottom: 42px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #f4f8ff;
+  border: 1px solid #dbe8f7;
+  text-align: left;
+}
+
+.complete-info p {
+  margin: 0;
+  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dbe5f2;
+}
+
+.complete-info p:last-child {
+  border-bottom: none;
+}
+
+.complete-info span {
+  width: 82px;
+  color: #59687b;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.complete-info strong {
+  flex: 1;
+  color: #102033;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.complete-logo-img {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin: 0 auto;
 }
