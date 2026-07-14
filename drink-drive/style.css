@@ -629,3 +629,13 @@ body {
     border-radius: 26px;
   }
 }
+/* 완료 카드 모바일 위치 최종값 */
+@media (max-width: 500px) {
+  .complete-date-overlay {
+    top: 62% !important;
+  }
+
+  .complete-name-overlay {
+    top: 70% !important;
+  }
+}
