@@ -434,19 +434,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   object-fit: contain;
 }
 
-/* 완료 화면: PNG 위에 작성일·서약인 표시 */
+/* 완료 화면 */
 .complete-screen {
   display: block;
-  padding: 0;
+  width: 100%;
+  max-width: 430px;
   min-height: 0;
+  padding: 0;
   background: transparent;
+  border-radius: 30px;
+  box-shadow: none;
   overflow: hidden;
-  line-height: 0;
 }
 
 .complete-image-wrap {
   position: relative;
   width: 100%;
+  line-height: normal;
 }
 
 .complete-card-img {
@@ -456,36 +460,35 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 30px;
 }
 
-/* 작성일 입력값 */
-.complete-date-overlay {
-  position: absolute;
-  left: 40.5%;
-  top: 60.4%;
-  width: 44%;
-  color: #103b72;
-  font-size: 15px;
-  font-weight: 900;
-  text-align: left;
-  white-space: nowrap;
-  line-height: 1;
-}
-
+/* 날짜와 이름 공통 */
+.complete-date-overlay,
 .complete-name-overlay {
   position: absolute;
-  left: 40.5%;
-  top: 68.6%;
-  width: 44%;
+  left: 40.2%;
+  width: 47%;
   color: #103b72;
-  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif;
+  font-size: clamp(14px, 4.1vw, 18px);
   font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.5px;
   text-align: left;
   white-space: nowrap;
-  line-height: 1;
+  transform: translateY(-50%);
 }
-/* 작은 모바일 */
-@media (max-width: 380px) {
-  .complete-date-overlay,
-  .complete-name-overlay {
-    font-size: 13px;
+
+/* 작성일 줄 중앙 */
+.complete-date-overlay {
+  top: 62.7%;
+}
+
+/* 서약인 줄 중앙 */
+.complete-name-overlay {
+  top: 70.8%;
+}
+@media (max-width: 500px) {
+  .app:has(.complete-screen:not(.hidden)) {
+    align-items: flex-start;
+    padding-top: 18px;
   }
 }
