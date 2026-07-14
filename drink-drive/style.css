@@ -488,13 +488,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .complete-date-overlay {
-  top: 56.8%;
+  top: 61.2%;
   left: 41%;
   width: 44%;
 }
 
 .complete-name-overlay {
-  top: 67.9%;
+  top: 69.4%;
   left: 41%;
   width: 44%;
 }
