@@ -476,7 +476,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard",
     "Noto Sans KR", sans-serif;
 
-  font-size: clamp(13px, 3.7vw, 16px);
+ font-size: clamp(12px, 3.4vw, 15px);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.4px;
@@ -487,15 +487,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transform: none;
 }
 
-/* 작성일 입력 영역 */
 .complete-date-overlay {
-  top: 59.4%;
+  top: 57.8%;
   height: 4.3%;
 }
 
-/* 서약인 입력 영역 */
 .complete-name-overlay {
-  top: 67.2%;
+  top: 65.7%;
   height: 4.3%;
 }
 @media (max-width: 500px) {
