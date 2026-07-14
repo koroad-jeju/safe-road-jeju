@@ -466,8 +466,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute;
   z-index: 5;
 
-  left: 40.5%;
-  width: 45%;
+  left: 41.2%;
+  width: 43.8%;
 
   display: flex;
   align-items: center;
@@ -476,7 +476,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard",
     "Noto Sans KR", sans-serif;
 
- font-size: clamp(12px, 3.4vw, 15px);
+  font-size: clamp(12px, 3.2vw, 15px);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.4px;
@@ -488,24 +488,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .complete-date-overlay {
-  top: 57.8%;
-  height: 4.3%;
+  top: 58.0%;
+  height: 4.1%;
 }
 
 .complete-name-overlay {
-  top: 65.7%;
-  height: 4.3%;
+  top: 65.9%;
+  height: 4.1%;
 }
+
 
 /* ==================================================
    모바일 화면 크기·비율 최종 통일
-   style.css 가장 마지막에 유지
+   반드시 style.css 가장 마지막에 추가
 ================================================== */
-
-:root {
-  --screen-max-width: 430px;
-  --mobile-side-gap: 14px;
-}
 
 html,
 body {
@@ -515,21 +511,21 @@ body {
 }
 
 body {
-  min-height: 100vh;
   min-height: 100dvh;
 }
 
 .app {
   width: 100%;
-  min-height: 100vh;
   min-height: 100dvh;
-  padding: 14px var(--mobile-side-gap) 28px;
+
+  padding: 14px;
+
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
 
-/* 모든 단계 화면의 실제 가로 폭을 완전히 동일하게 고정 */
+/* 모든 화면의 가로 폭을 동일하게 설정 */
 .screen,
 .start-screen,
 .quiz-screen,
@@ -537,19 +533,18 @@ body {
 .pledge-screen,
 .complete-screen {
   width: 100%;
-  max-width: var(--screen-max-width);
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 430px;
+  margin: 0 auto;
 }
 
-/* 시작·퀴즈·결과 화면 */
+/* 시작·퀴즈·결과 화면 기본 높이 통일 */
 .start-screen,
 .quiz-screen,
 .result-screen {
-  min-height: calc(100dvh - 42px);
+  min-height: calc(100dvh - 28px);
 }
 
-/* 이미지 비율은 원본 그대로 유지 */
+/* 이미지 화면은 이미지 원본 비율 유지 */
 .hero-full-img,
 .pledge-content-img,
 .complete-card-img {
@@ -557,7 +552,6 @@ body {
   width: 100%;
   max-width: 100%;
   height: auto;
-  object-fit: contain;
 }
 
 /* 시작 화면 */
@@ -567,7 +561,7 @@ body {
   overflow: hidden;
 }
 
-/* 서약 화면은 긴 내용이므로 높이 강제 금지 */
+/* 서약 화면은 내용이 길기 때문에 높이를 강제하지 않음 */
 .pledge-screen {
   min-height: 0;
   padding: 0 0 28px;
@@ -575,10 +569,15 @@ body {
   overflow: hidden;
 }
 
-/* 완료 화면 */
+/* 완료 화면도 다른 화면과 정확히 같은 폭으로 */
 .complete-screen {
+  width: 100%;
+  max-width: 430px;
   min-height: 0;
+
   padding: 0;
+  margin: 0 auto;
+
   background: transparent;
   border-radius: 30px;
   box-shadow: none;
@@ -589,18 +588,17 @@ body {
   position: relative;
   width: 100%;
   margin: 0;
-  line-height: 0;
 }
 
 .complete-card-img {
+  width: 100%;
   border-radius: 30px;
 }
 
-/* 모바일에서도 max-width를 해제하지 않음 */
+/* 모바일 */
 @media (max-width: 500px) {
   .app {
-    padding-top: 14px;
-    padding-bottom: 28px;
+    padding: 10px;
   }
 
   .screen,
@@ -610,7 +608,13 @@ body {
   .pledge-screen,
   .complete-screen {
     width: 100%;
-    max-width: var(--screen-max-width);
+    max-width: 430px;
+  }
+
+  .start-screen,
+  .quiz-screen,
+  .result-screen {
+    min-height: calc(100dvh - 20px);
   }
 
   .quiz-screen {
