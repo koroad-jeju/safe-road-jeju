@@ -479,12 +479,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 /* 작성일 줄 중앙 */
 .complete-date-overlay {
-  top: 62.7%;
+  top: 63.5%;
 }
 
 /* 서약인 줄 중앙 */
 .complete-name-overlay {
-  top: 70.8%;
+  top: 68.9%;
 }
 @media (max-width: 500px) {
   .app:has(.complete-screen:not(.hidden)) {
