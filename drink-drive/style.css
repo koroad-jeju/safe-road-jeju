@@ -488,15 +488,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .complete-date-overlay {
-  top: 58.0%;
-  height: 4.1%;
+  top: 56.8%;
+  left: 41%;
+  width: 44%;
 }
 
 .complete-name-overlay {
-  top: 65.9%;
-  height: 4.1%;
+  top: 67.9%;
+  left: 41%;
+  width: 44%;
 }
-
 
 /* ==================================================
    모바일 화면 크기·비율 최종 통일
