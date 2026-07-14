@@ -477,14 +477,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transform: translateY(-50%);
 }
 
-/* 작성일 줄 중앙 */
+/* 작성일 */
 .complete-date-overlay {
-  top: 63.5%;
+  top: 61.3%;
 }
 
-/* 서약인 줄 중앙 */
+/* 서약인 */
 .complete-name-overlay {
-  top: 68.9%;
+  top: 69%;
 }
 @media (max-width: 500px) {
   .app:has(.complete-screen:not(.hidden)) {
