@@ -460,31 +460,43 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 30px;
 }
 
-/* 날짜와 이름 공통 */
+/* 완료 카드 날짜·이름 */
 .complete-date-overlay,
 .complete-name-overlay {
   position: absolute;
-  left: 40.2%;
-  width: 47%;
+  z-index: 5;
+
+  left: 40.5%;
+  width: 45%;
+
+  display: flex;
+  align-items: center;
+
   color: #103b72;
-  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif;
-  font-size: clamp(14px, 4.1vw, 18px);
-  font-weight: 900;
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard",
+    "Noto Sans KR", sans-serif;
+
+  font-size: clamp(13px, 3.7vw, 16px);
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.4px;
+
   text-align: left;
   white-space: nowrap;
-  transform: translateY(-50%);
+
+  transform: none;
 }
 
-/* 작성일 */
+/* 작성일 입력 영역 */
 .complete-date-overlay {
-  top: 61.3%;
+  top: 59.4%;
+  height: 4.3%;
 }
 
-/* 서약인 */
+/* 서약인 입력 영역 */
 .complete-name-overlay {
-  top: 69%;
+  top: 67.2%;
+  height: 4.3%;
 }
 @media (max-width: 500px) {
   .app:has(.complete-screen:not(.hidden)) {
