@@ -364,18 +364,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .pledge-logo-area {
-  margin-top: 24px;
-  padding-top: 20px;
+  margin-top: 16px;
+  padding-top: 12px;
   border-top: 1px solid #dbe8f7;
+
+  display: flex;
+  justify-content: center;
 }
 
 .pledge-logo-img {
-  display: block;
-  width: 100%;
-  max-width: 320px;
+  width: 90%;
+  max-width: 300px;
   height: auto;
-  margin: 0 auto;
-  object-fit: contain;
+
+  border-radius: 12px;
 }
 
 /* 완료 화면 */
