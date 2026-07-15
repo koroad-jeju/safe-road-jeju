@@ -259,9 +259,7 @@ body {
 
 /* 서약 화면 */
 .pledge-screen {
-  padding: 0 0 28px;
-  background: #eaf6ff;
-  overflow: hidden;
+  padding: 0 0 18px;
 }
 
 .pledge-hero-img {
@@ -327,14 +325,14 @@ body {
 
 /* 첫 번째 서약서 이미지 */
 .pledge-content-img {
-  display: block;
   width: 100%;
   height: auto;
+  display: block;
 }
 
 /* 날짜·이름 작성 영역 */
 .pledge-write-box {
-  margin: 0 18px 22px;
+  margin:-12px 18px 20px;
   padding: 22px 18px 20px;
   border-radius: 22px;
   background: #ffffff;
