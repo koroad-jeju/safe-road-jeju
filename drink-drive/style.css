@@ -593,38 +593,37 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-bottom: 6px;
   }
 
-  .pledge-input-group label {
-    margin-bottom: 3px;
-    font-size: 13px;
-  }
-
+.pledge-input-group label {
+    font-size: 17px;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
   .pledge-input {
-    height: 40px;
-    min-height: 40px;
+    height: 52px;
+    min-height: 52px;
     padding: 0 12px;
     border-radius: 13px;
-    font-size: 14px;
+    font-size: 17px;
   }
 
   input[type="date"] {
     min-height: 40px;
   }
 
-  .pledge-check-row {
-    margin: 6px 0;
-    gap: 8px;
-    font-size: 13px;
-  }
+.pledge-check-row {
+    margin: 18px 0;
+    font-size: 18px;
+}
 
-  .pledge-check-row input {
-    width: 19px;
-    height: 19px;
-  }
+.pledge-check-row input {
+    width: 28px;
+    height: 28px;
+}
 
   .pledge-btn {
-    min-height: 44px;
+    min-height: 58px;
     border-radius: 15px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .pledge-logo-area {
