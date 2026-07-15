@@ -4,8 +4,16 @@
   overflow-wrap: break-word;
 }
 
+html,
 body {
+  width: 100%;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
   font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif;
   background: linear-gradient(180deg, #eef7ff 0%, #ffffff 100%);
   color: #102033;
@@ -14,7 +22,8 @@ body {
 .app {
   width: 100%;
   min-height: 100vh;
-  padding: 18px 14px;
+  min-height: 100dvh;
+  padding: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,9 +33,11 @@ body {
   width: 100%;
   max-width: 430px;
   min-height: 720px;
-  background: #ffffff;
-  border-radius: 30px;
+  margin: 0 auto;
   padding: 30px 24px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #ffffff;
   text-align: center;
   box-shadow: 0 18px 45px rgba(26, 74, 128, 0.14);
 }
@@ -39,10 +50,11 @@ body {
 .primary-btn {
   width: 100%;
   min-height: 62px;
-  border: none;
+  border: 0;
   border-radius: 18px;
   background: linear-gradient(135deg, #1167e8 0%, #0057d9 100%);
   color: #ffffff;
+  font-family: inherit;
   font-size: 20px;
   font-weight: 900;
   cursor: pointer;
@@ -58,7 +70,6 @@ body {
 .start-screen {
   padding: 0 0 28px;
   background: #eaf6ff;
-  overflow: hidden;
 }
 
 .hero-full-img {
@@ -68,13 +79,12 @@ body {
 }
 
 .start-real-btn {
-  width: calc(100% - 40px);
-  margin: 20px auto 0;
   display: block;
+  width: calc(100% - 40px);
   height: 64px;
+  margin: 20px auto 0;
   border-radius: 22px;
   font-size: 22px;
-  font-weight: 900;
 }
 
 /* 퀴즈 화면 */
@@ -85,8 +95,8 @@ body {
 }
 
 .quiz-top {
-  text-align: center;
   margin-bottom: 38px;
+  text-align: center;
 }
 
 .quiz-top p {
@@ -99,17 +109,17 @@ body {
 .progress {
   width: 100%;
   height: 9px;
-  background: #e5eefb;
-  border-radius: 999px;
   overflow: hidden;
+  border-radius: 999px;
+  background: #e5eefb;
 }
 
 .progress-bar {
   width: 33.333%;
   height: 100%;
-  background: linear-gradient(90deg, #1167e8, #00a8e8);
   border-radius: 999px;
-  transition: 0.25s;
+  background: linear-gradient(90deg, #1167e8, #00a8e8);
+  transition: width 0.25s ease;
 }
 
 .q-mark {
@@ -120,8 +130,8 @@ body {
 }
 
 .quiz-screen h2 {
-  margin: 0 auto;
   max-width: 360px;
+  margin: 0 auto;
   color: #102033;
   font-size: 28px;
   line-height: 1.45;
@@ -145,25 +155,26 @@ body {
   width: 100%;
   min-height: 72px;
   padding: 18px;
-  border-radius: 20px;
   border: 2px solid #dce8f7;
+  border-radius: 20px;
   background: #ffffff;
   color: #102033;
+  font-family: inherit;
   font-size: 20px;
   font-weight: 900;
   cursor: pointer;
 }
 
 .option-btn.correct {
-  background: #1464e9;
-  color: white;
   border-color: #1464e9;
+  background: #1464e9;
+  color: #ffffff;
 }
 
 .option-btn.wrong {
+  border-color: #fca5a5;
   background: #fee2e2;
   color: #dc2626;
-  border-color: #fca5a5;
 }
 
 .option-btn:disabled {
@@ -174,9 +185,9 @@ body {
 .explain-box {
   margin: 0 0 22px;
   padding: 20px;
+  border: 1px solid #dbe9ff;
   border-radius: 22px;
   background: #f4f8ff;
-  border: 1px solid #dbe9ff;
   text-align: left;
   box-shadow: 0 10px 28px rgba(30, 94, 200, 0.08);
 }
@@ -189,10 +200,10 @@ body {
 
 .explain-text {
   margin: 0;
-  font-size: 16px;
-  line-height: 1.7;
   color: #2b3b4f;
+  font-size: 16px;
   font-weight: 700;
+  line-height: 1.7;
 }
 
 .correct-text {
@@ -227,11 +238,11 @@ body {
 
 .trophy-img {
   position: absolute;
-  left: 50%;
+  z-index: 2;
   top: 54%;
+  left: 50%;
   width: 118px;
   transform: translate(-50%, -50%);
-  z-index: 2;
 }
 
 .result-screen h2 {
@@ -253,90 +264,28 @@ body {
   margin: 0 0 28px;
   color: #526070;
   font-size: 18px;
-  line-height: 1.7;
   font-weight: 700;
+  line-height: 1.7;
 }
 
-/* 서약 화면 */
-.pledge-screen {
-  padding: 0 0 18px;
-}
-
-.pledge-hero-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.pledge-check-row {
-  width: calc(100% - 40px);
-  margin: 18px auto 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  font-size: 20px;
-  font-weight: 800;
-  color: #17233b;
-}
-
-.pledge-check-row input {
-  width: 28px;
-  height: 28px;
-  accent-color: #1464e9;
-  flex-shrink: 0;
-}
-
-.pledge-btn {
-  width: calc(100% - 40px);
-  margin: 0 auto;
-  display: block;
-}
-
-
-@media (max-width: 420px) {
-  .screen {
-    min-height: calc(100dvh - 20px);
-    border-radius: 28px;
-  }
-
-  .quiz-screen {
-    padding: 26px 20px;
-  }
-
-  .quiz-screen h2 {
-    font-size: 25px;
-  }
-
-  .score {
-    font-size: 58px;
-  }
-
-  .explain-text {
-    font-size: 15px;
-  }
-}
 /* 서약 화면 */
 .pledge-screen {
   padding: 0 0 28px;
   background: #f5faff;
-  overflow: hidden;
 }
 
-/* 첫 번째 서약서 이미지 */
 .pledge-content-img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
 }
 
-/* 날짜·이름 작성 영역 */
 .pledge-write-box {
-  margin:-12px 18px 20px;
+  margin: -12px 18px 20px;
   padding: 22px 18px 20px;
+  border: 1px solid #dbe8f7;
   border-radius: 22px;
   background: #ffffff;
-  border: 1px solid #dbe8f7;
   box-shadow: 0 12px 28px rgba(34, 91, 160, 0.12);
 }
 
@@ -359,12 +308,12 @@ body {
   padding: 0 16px;
   border: 2px solid #d8e5f7;
   border-radius: 16px;
+  outline: none;
   background: #ffffff;
   color: #102033;
   font-family: inherit;
   font-size: 18px;
   font-weight: 800;
-  outline: none;
 }
 
 .pledge-input:focus {
@@ -377,11 +326,10 @@ body {
   font-weight: 600;
 }
 
-/* 모바일 날짜 선택창이 잘 보이게 */
 input[type="date"] {
+  min-height: 58px;
   appearance: none;
   -webkit-appearance: none;
-  min-height: 58px;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -390,13 +338,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
-/* 동의 체크 */
 .pledge-check-row {
-  width: 100%;
-  margin: 20px 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
+  margin: 20px 0;
   gap: 10px;
   color: #17233b;
   font-size: 17px;
@@ -405,10 +352,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .pledge-check-row input {
+  flex-shrink: 0;
   width: 25px;
   height: 25px;
   accent-color: #1464e9;
-  flex-shrink: 0;
 }
 
 .pledge-btn {
@@ -416,7 +363,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   margin: 0;
 }
 
-/* 입력 카드 안 기관 로고 */
 .pledge-logo-area {
   margin-top: 24px;
   padding-top: 20px;
@@ -439,15 +385,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   max-width: 430px;
   min-height: 0;
   padding: 0;
-  background: transparent;
   border-radius: 30px;
+  background: transparent;
   box-shadow: none;
-  overflow: hidden;
 }
 
 .complete-image-wrap {
   position: relative;
   width: 100%;
+  margin: 0;
   line-height: normal;
 }
 
@@ -458,189 +404,45 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   border-radius: 30px;
 }
 
-/* 완료 카드 날짜·이름 */
 .complete-date-overlay,
 .complete-name-overlay {
   position: absolute;
   z-index: 5;
-
-  left: 41.2%;
-  width: 43.8%;
-
+  left: 41%;
+  width: 44%;
   display: flex;
   align-items: center;
-
   color: #103b72;
-  font-family: -apple-system, BlinkMacSystemFont, "Pretendard",
-    "Noto Sans KR", sans-serif;
-
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", sans-serif;
   font-size: clamp(12px, 3.2vw, 15px);
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.4px;
-
   text-align: left;
   white-space: nowrap;
-
-  transform: none;
 }
 
 .complete-date-overlay {
-  top: 62.0%;
-  left: 41%;
-  width: 44%;
+  top: 62%;
 }
 
 .complete-name-overlay {
-  top: 70.0%;
-  left: 41%;
-  width: 44%;
+  top: 70%;
 }
 
-/* ==================================================
-   모바일 화면 크기·비율 최종 통일
-   반드시 style.css 가장 마지막에 추가
-================================================== */
-
-html,
-body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  min-height: 100dvh;
-}
-
-.app {
-  width: 100%;
-  min-height: 100dvh;
-
-  padding: 14px;
-
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-/* 모든 화면의 가로 폭을 동일하게 설정 */
-.screen,
-.start-screen,
-.quiz-screen,
-.result-screen,
-.pledge-screen,
-.complete-screen {
-  width: 100%;
-  max-width: 430px;
-  margin: 0 auto;
-}
-
-/* 시작·퀴즈·결과 화면 기본 높이 통일 */
-.start-screen,
-.quiz-screen,
-.result-screen {
-  min-height: calc(100dvh - 28px);
-}
-
-/* 이미지 화면은 이미지 원본 비율 유지 */
-.hero-full-img,
-.pledge-content-img,
-.complete-card-img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
-
-/* 시작 화면 */
-.start-screen {
-  padding: 0 0 28px;
-  border-radius: 30px;
-  overflow: hidden;
-}
-
-/* 서약 화면은 내용이 길기 때문에 높이를 강제하지 않음 */
-.pledge-screen {
-  min-height: 0;
-  padding: 0 0 28px;
-  border-radius: 30px;
-  overflow: hidden;
-}
-
-/* 완료 화면도 다른 화면과 정확히 같은 폭으로 */
-.complete-screen {
-  width: 100%;
-  max-width: 430px;
-  min-height: 0;
-
-  padding: 0;
-  margin: 0 auto;
-
-  background: transparent;
-  border-radius: 30px;
-  box-shadow: none;
-  overflow: hidden;
-}
-
-.complete-image-wrap {
-  position: relative;
-  width: 100%;
-  margin: 0;
-}
-
-.complete-card-img {
-  width: 100%;
-  border-radius: 30px;
-}
-
-/* 모바일 */
+/* 모바일: 모든 화면을 한 화면 안에 표시 */
 @media (max-width: 500px) {
-  .app {
-    padding: 10px;
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
   }
 
-  .screen,
-  .start-screen,
-  .quiz-screen,
-  .result-screen,
-  .pledge-screen,
-  .complete-screen {
+  .app {
     width: 100%;
-    max-width: 430px;
-  }
-
-  .start-screen,
-  .quiz-screen,
-  .result-screen {
-    min-height: calc(100dvh - 20px);
-  }
-
-  .quiz-screen {
-    padding: 26px 20px;
-  }
-
-  .start-screen,
-  .pledge-screen,
-  .complete-screen,
-  .complete-card-img {
-    border-radius: 26px;
-  }
-}
-/* 완료 카드 모바일 위치 최종값 */
-@media (max-width: 500px) {
-  .complete-date-overlay {
-    top: 62% !important;
-  }
-
-  .complete-name-overlay {
-    top: 70% !important;
-  }
-}
-@media (max-width: 500px) {
-  .app {
-    min-height: 100dvh;
+    height: 100vh;
     height: 100dvh;
+    min-height: 0;
     padding: 8px;
     align-items: center;
     overflow: hidden;
@@ -648,185 +450,228 @@ body {
 
   .screen {
     width: 100%;
+    max-width: 430px;
+    height: calc(100vh - 16px);
     height: calc(100dvh - 16px);
     min-height: 0;
+    max-height: calc(100vh - 16px);
     max-height: calc(100dvh - 16px);
+    margin: 0 auto;
     overflow: hidden;
+    border-radius: 26px;
   }
 
   /* 시작 화면 */
   .start-screen {
     display: flex;
     flex-direction: column;
-    padding: 0 0 14px;
+    padding: 0 0 12px;
   }
 
   .start-screen .hero-full-img {
+    flex: 1 1 auto;
     width: 100%;
-    flex: 1;
     min-height: 0;
     object-fit: contain;
   }
 
   .start-real-btn {
-    flex-shrink: 0;
-    height: 56px;
-    min-height: 56px;
-    margin: 10px auto 0;
+    flex: 0 0 54px;
+    width: calc(100% - 32px);
+    height: 54px;
+    min-height: 54px;
+    margin: 8px auto 0;
+    border-radius: 18px;
     font-size: 19px;
   }
 
   /* 퀴즈 화면 */
   .quiz-screen {
-    padding: 20px 18px;
+    padding: 18px 18px;
     justify-content: center;
   }
 
   .quiz-top {
-    margin-bottom: 22px;
+    margin-bottom: 18px;
+  }
+
+  .quiz-top p {
+    margin-bottom: 8px;
+    font-size: 16px;
   }
 
   .q-mark {
-    margin-bottom: 8px;
-    font-size: 34px;
+    margin-bottom: 6px;
+    font-size: 32px;
   }
 
   .quiz-screen h2 {
-    font-size: 22px;
-    line-height: 1.35;
+    font-size: 21px;
+    line-height: 1.34;
   }
 
   .guide {
-    margin: 14px 0;
+    margin: 11px 0;
     font-size: 14px;
   }
 
   .options {
-    gap: 10px;
-    margin-bottom: 12px;
+    gap: 9px;
+    margin-bottom: 10px;
   }
 
   .option-btn {
-    min-height: 58px;
-    padding: 12px;
-    font-size: 18px;
-  }
-
-  .explain-box {
-    margin-bottom: 12px;
-    padding: 14px;
-  }
-
-  .explain-result {
+    min-height: 54px;
+    padding: 10px;
+    border-radius: 17px;
     font-size: 17px;
   }
 
+  .explain-box {
+    margin-bottom: 10px;
+    padding: 12px 14px;
+    border-radius: 17px;
+  }
+
+  .explain-result {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+
   .explain-text {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.42;
   }
 
   .quiz-screen .primary-btn {
-    min-height: 54px;
+    min-height: 50px;
+    font-size: 17px;
   }
 
   /* 결과 화면 */
   .result-screen {
-    padding: 24px 20px;
+    padding: 20px 18px;
   }
 
   .result-visual {
-    width: 170px;
-    height: 130px;
-    margin-bottom: 18px;
+    width: 160px;
+    height: 120px;
+    margin-bottom: 14px;
   }
 
   .result-screen h2 {
-    font-size: 28px;
+    margin-bottom: 8px;
+    font-size: 27px;
   }
 
   .score {
-    font-size: 48px;
+    margin: 7px 0;
+    font-size: 46px;
   }
 
   .result-msg {
-    margin-bottom: 18px;
-    font-size: 16px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.5;
   }
 
-  /* 서약 화면 */
+  .result-screen .primary-btn {
+    min-height: 52px;
+    font-size: 18px;
+  }
+
+  /* 서약 화면: 상단 이미지 + 하단 입력 카드를 한 화면에 배치 */
   .pledge-screen {
-    display: flex;
-    flex-direction: column;
-    padding: 0 0 10px;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    padding: 0 0 8px;
+    background: #f5faff;
   }
 
   .pledge-content-img {
+    align-self: stretch;
     width: 100%;
-    flex: 1;
+    height: 100%;
     min-height: 0;
     object-fit: contain;
+    object-position: center top;
   }
 
   .pledge-write-box {
-    flex-shrink: 0;
-    margin: 6px 12px 0;
-    padding: 10px 12px;
+    width: calc(100% - 16px);
+    margin: -4px auto 0;
+    padding: 9px 12px 8px;
+    border-radius: 18px;
   }
 
   .pledge-input-group {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .pledge-input-group label {
-    margin-bottom: 4px;
-    font-size: 14px;
+    margin-bottom: 3px;
+    font-size: 13px;
   }
 
   .pledge-input {
-    height: 42px;
-    min-height: 42px;
-    font-size: 15px;
-  }
-
-  .pledge-check-row {
-    margin: 8px 0;
+    height: 40px;
+    min-height: 40px;
+    padding: 0 12px;
+    border-radius: 13px;
     font-size: 14px;
   }
 
+  input[type="date"] {
+    min-height: 40px;
+  }
+
+  .pledge-check-row {
+    margin: 6px 0;
+    gap: 8px;
+    font-size: 13px;
+  }
+
   .pledge-check-row input {
-    width: 20px;
-    height: 20px;
+    width: 19px;
+    height: 19px;
   }
 
   .pledge-btn {
-    min-height: 48px;
-    font-size: 17px;
+    min-height: 44px;
+    border-radius: 15px;
+    font-size: 16px;
   }
 
   .pledge-logo-area {
-    margin-top: 8px;
-    padding-top: 8px;
+    margin-top: 6px;
+    padding-top: 5px;
   }
 
   .pledge-logo-img {
-    max-height: 32px;
+    max-height: 27px;
   }
 
   /* 완료 화면 */
   .complete-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 16px);
     height: calc(100dvh - 16px);
   }
 
   .complete-image-wrap {
-    width: 100%;
+    width: auto;
     height: 100%;
+    max-width: 100%;
+    aspect-ratio: 9 / 16;
   }
 
   .complete-card-img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: fill;
+    border-radius: 26px;
   }
 
   .complete-date-overlay {
@@ -835,5 +680,59 @@ body {
 
   .complete-name-overlay {
     top: 70% !important;
+  }
+}
+
+/* 높이가 낮은 모바일에서는 한 단계 더 압축 */
+@media (max-width: 500px) and (max-height: 740px) {
+  .quiz-screen {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .quiz-top {
+    margin-bottom: 12px;
+  }
+
+  .q-mark {
+    font-size: 28px;
+  }
+
+  .quiz-screen h2 {
+    font-size: 19px;
+  }
+
+  .guide {
+    margin: 8px 0;
+  }
+
+  .option-btn {
+    min-height: 48px;
+  }
+
+  .explain-text {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .pledge-write-box {
+    padding: 7px 10px 6px;
+  }
+
+  .pledge-input {
+    height: 36px;
+    min-height: 36px;
+  }
+
+  input[type="date"] {
+    min-height: 36px;
+  }
+
+  .pledge-btn {
+    min-height: 40px;
+  }
+
+  .pledge-logo-img {
+    max-height: 23px;
   }
 }
