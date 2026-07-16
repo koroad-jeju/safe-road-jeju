@@ -728,3 +728,32 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     max-height: 23px;
   }
 }
+/* 완료 화면 날짜·이름 최종 위치 */
+.complete-date-overlay,
+.complete-name-overlay {
+  left: 41.5% !important;
+  width: 43% !important;
+  height: auto !important;
+
+  display: block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-size: clamp(13px, 3.3vw, 16px) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+
+  transform: translateY(-50%) !important;
+}
+
+/* 작성일 입력선 위치 */
+.complete-date-overlay {
+  top: 70.6% !important;
+}
+
+/* 서약인 입력선 위치 */
+.complete-name-overlay {
+  top: 77.4% !important;
+}
