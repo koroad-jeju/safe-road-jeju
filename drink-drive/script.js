@@ -1,3 +1,5 @@
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxmydQJ3CZyngxDaaqMGpJbNvOH8fyvOY2-Jr_HBTENeI3HjTJDyIAqvfCAPk_eZ2DKbQ/exec";
+
 const quizData = [
   {
     question: "자전거와 전동킥보드도 음주운전에 해당된다.",
@@ -213,11 +215,14 @@ function submitPledge() {
     completeName.textContent = name;
   }
 
-  if (completeDate) {
-    completeDate.textContent = formatKoreanDate(date);
-  }
+if (completeDate) {
+  completeDate.textContent = formatKoreanDate(date);
+}
 
-  showScreen(completeScreen);
+// 구글 스프레드시트 저장
+saveToGoogleSheet(name, date);
+
+showScreen(completeScreen);
 
   window.scrollTo({
     top: 0,
@@ -231,6 +236,20 @@ function formatKoreanDate(dateValue) {
   return `${year}년 ${Number(month)}월 ${Number(day)}일`;
 }
 
+async function saveToGoogleSheet(name, date) {
+
+  const formData = new URLSearchParams();
+
+  formData.append("name", name);
+  formData.append("date", date);
+
+  await fetch(GOOGLE_SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: formData
+  });
+
+}
 document.getElementById("pledgeName").addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
