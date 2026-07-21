@@ -1,4 +1,6 @@
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxmydQJ3CZyngxDaaqMGpJbNvOH8fyvOY2-Jr_HBTENeI3HjTJDyIAqvfCAPk_eZ2DKbQ/exec";
+const PLACE =
+  new URLSearchParams(window.location.search).get("place") || "미지정";
 
 const quizData = [
   {
@@ -237,19 +239,19 @@ function formatKoreanDate(dateValue) {
 }
 
 async function saveToGoogleSheet(name, date) {
-
   const formData = new URLSearchParams();
 
   formData.append("name", name);
   formData.append("date", date);
+  formData.append("place", PLACE);
 
   await fetch(GOOGLE_SCRIPT_URL, {
     method: "POST",
     mode: "no-cors",
     body: formData
   });
-
 }
+
 document.getElementById("pledgeName").addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
